@@ -1,17 +1,17 @@
 
 # iOS游戏加速器开发指南
 
-###1. 基本原理
+### 1. 基本原理
 通过连接对应的代理服务器以降低延迟,获得更好的游戏体验。
 
-###2.准备工作
+### 2.准备工作
 1.一台服务器
 
 2.iOS真机设备(NetworkExtension)只支持真机调试
 
 3.付费开发者账号
 
-###3. 本文环境
+### 3. 本文环境
 服务器系统为
 >centos
 
@@ -19,7 +19,7 @@
 >OpenVPN
 
 
-###4. 服务器配置
+### 4. 服务器配置
 参考[此链接](http://link.zhihu.com/?target=https%3A//github.com/angristan/openvpn-install)我们可以根据readme非常方便的在服务器上安装openvpn
 
 >如果你的网络不行
@@ -55,7 +55,7 @@
 > 安装完成后你能看到以下信息,注意保存`vpnclient.ovpn`
 文件，后续我们连接此服务器的时候会用到。
 	.
-##5. iOS工程配置
+### 5. iOS工程配置
 
 1. 在 `Signing & Capabilities`中添加`Network Extensions`
 	
@@ -90,7 +90,7 @@
 需要注意的是,这个库是提供给`vpn-tunnel`这个target使用的，不要导入到主工程中
 ​
 
-##6. 代码部分
+### 6.代码部分
 1. 我们创建`VPNManager`类管理我们的连接
 		
 		import NetworkExtension
@@ -235,7 +235,7 @@
 ovpn
 替换成自己的然后进行测试。
 
-## 7. Debug
+### 7. Debug
 1. 调试 `Extension`比较麻烦， 我们需要在`Debug / Attach to Process by PID or Name`输入`Extension`名字。 对于此工程我们输入`vpn-tunnel`
 
 	![](./resource/v2-eaa18ed2d49b704b468684dfa07465c3_1440w.jpg)
@@ -251,7 +251,7 @@ ovpn
 
 	![](./resource/v2-ca484dbf6495d5845cbbf596825d06e2_1440w.jpg)
 
-##x.参考链接
+### x.参考链接
 
 1. [What's New in Network Extension and VPN
 ](https://developer.apple.com/videos/play/wwdc2015/717)
